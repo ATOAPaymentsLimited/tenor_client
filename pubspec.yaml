@@ -1,0 +1,12 @@
+name: tenor_client
+description: Tenor client for GIFs
+version: 0.1.0+1
+
+
+environment:
+  sdk: ">=2.18.0 <3.0.0"
+
+dev_dependencies:
+  mocktail: ^0.3.0
+  test: ^1.19.2
+  very_good_analysis: ^3.1.0
