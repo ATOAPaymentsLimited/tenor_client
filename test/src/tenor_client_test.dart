@@ -5,7 +5,7 @@ import 'package:test/test.dart';
 void main() {
   group('TenorClient', () {
     test('can be instantiated', () {
-      expect(TenorClient(), isNotNull);
+      expect(TenorClient(apiKey: '', countryCode: ''), isNotNull);
     });
   });
 }
