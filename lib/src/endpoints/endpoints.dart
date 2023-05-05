@@ -8,10 +8,12 @@ class Endpoints {
   static String search({
     required String query,
     int limit = 20,
+    String? next,
   }) =>
       '/search'.withQueryParams({
         'q': query,
         'limit': limit,
+        'pos': next,
       });
 
   static String autocomplete({
@@ -24,12 +26,12 @@ class Endpoints {
       });
 
   static String trendingTerms({
-    required String query,
     int limit = 20,
+    String? next,
   }) =>
       '/trending_terms'.withQueryParams({
-        'q': query,
         'limit': limit,
+        'pos': next,
       });
 
   static String registershare({
@@ -40,14 +42,12 @@ class Endpoints {
       });
 
   static String posts({
-    int limit = 20,
     required List<String> ids,
-    required List<MediaFilter> mediaFilters,
+    List<MediaFilter> mediaFilters = MediaFilter.values,
   }) =>
-      '/trending_terms'.withQueryParams({
-        'limit': limit,
+      '/posts'.withQueryParams({
         'ids': ids,
-        'media_filter': mediaFilters.map((e) => e.name).toString(),
+        'media_filter': mediaFilters.map((e) => e.name).join(','),
       });
 }
 

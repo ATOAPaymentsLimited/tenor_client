@@ -24,9 +24,49 @@ class TenorClient {
   Future<TenorResponse> search(
     String query, {
     int limit = 20,
+    String? next,
   }) async {
     final res = await _dio.get<Map<String, dynamic>>(
       Endpoints.search(
+        query: query,
+        limit: limit,
+        next: next,
+      ),
+    );
+
+    final data = res.data;
+
+    if (data == null) {
+      throw Exception('No data found');
+    }
+
+    return TenorResponse.fromJson(data);
+  }
+
+  Future<List<String>> trendingTerms({
+    int limit = 20,
+  }) async {
+    final res = await _dio.get<Map<String, dynamic>>(
+      Endpoints.trendingTerms(
+        limit: limit,
+      ),
+    );
+
+    final data = res.data;
+
+    if (data == null) {
+      throw Exception('No data found');
+    }
+
+    return (data['results'] as List? ?? []).map((e) => e as String).toList();
+  }
+
+  Future<List<String>> autocomplete({
+    required String query,
+    int limit = 20,
+  }) async {
+    final res = await _dio.get<Map<String, dynamic>>(
+      Endpoints.autocomplete(
         query: query,
         limit: limit,
       ),
@@ -38,6 +78,6 @@ class TenorClient {
       throw Exception('No data found');
     }
 
-    return TenorResponse.fromJson(data);
+    return (data['results'] as List? ?? []).map((e) => e as String).toList();
   }
 }
