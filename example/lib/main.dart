@@ -1,3 +1,6 @@
+import 'package:example/pages/autocomplete_page.dart';
+import 'package:example/pages/list_page.dart';
+import 'package:example/pages/trending_page.dart';
 import 'package:flutter/material.dart';
 import 'package:tenor_client/tenor_client.dart';
 
@@ -5,8 +8,24 @@ void main() {
   runApp(const MyApp());
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
   const MyApp({super.key});
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  late TenorClient _tenorClient;
+
+  @override
+  void initState() {
+    super.initState();
+    _tenorClient = TenorClient(
+      apiKey: 'AIzaSyAclShsTCNFHC8L892AIA0wdbot5TYgDYg',
+      countryCode: 'GB',
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -16,6 +35,17 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      routes: {
+        '/list': (context) => ListPage(
+              tenorClient: _tenorClient,
+            ),
+        '/trending': (context) => TrendingPage(
+              tenorClient: _tenorClient,
+            ),
+        '/autocomplete': (context) => AutocompletePage(
+              tenorClient: _tenorClient,
+            ),
+      },
     );
   }
 }
@@ -30,26 +60,6 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  late Future<TenorResponse> _response;
-
-  late TenorClient _tenorClient;
-
-  @override
-  void initState() {
-    super.initState();
-    _tenorClient = TenorClient(
-      apiKey: 'AIzaSyAclShsTCNFHC8L892AIA0wdbot5TYgDYg',
-      countryCode: 'GB',
-    );
-    _response = _tenorClient.search('cat');
-  }
-
-  void _search() {
-    setState(() {
-      _response = _tenorClient.search('cat');
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -57,45 +67,29 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title),
       ),
       body: Center(
-        child: FutureBuilder(
-          future: _response,
-          builder: (context, snapshot) {
-            if (snapshot.connectionState == ConnectionState.waiting) {
-              return const CircularProgressIndicator();
-            }
-
-            final list = snapshot.data?.results ?? <GifResult>[];
-            return ListView.builder(
-              itemCount: list.length,
-              itemBuilder: (context, index) {
-                final nanogif = list[index].mediaFormats.nanogif;
-                final tinygif = list[index].mediaFormats.tinygif;
-
-                return Row(
-                  children: [
-                    Expanded(
-                      child: Image.network(
-                        nanogif,
-                        fit: BoxFit.cover,
-                      ),
-                    ),
-                    Expanded(
-                      child: Image.network(
-                        tinygif,
-                        fit: BoxFit.cover,
-                      ),
-                    ),
-                  ],
-                );
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            ElevatedButton(
+              onPressed: () {
+                Navigator.of(context).pushNamed('/list');
               },
-            );
-          },
+              child: const Text('List Page'),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.of(context).pushNamed('/trending');
+              },
+              child: const Text('Trending Page'),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.of(context).pushNamed('/autocomplete');
+              },
+              child: const Text('Autocomplete Page'),
+            ),
+          ],
         ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _search,
-        tooltip: 'Search',
-        child: const Icon(Icons.search),
       ),
     );
   }
