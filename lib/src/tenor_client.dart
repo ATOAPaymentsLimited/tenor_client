@@ -80,4 +80,16 @@ class TenorClient {
 
     return (data['results'] as List? ?? []).map((e) => e as String).toList();
   }
+
+  Future<void> registershare({
+    required String id,
+    String? query,
+  }) async {
+    await _dio.get<Map<String, dynamic>>(
+      Endpoints.registershare(
+        id: id,
+        query: query,
+      ),
+    );
+  }
 }

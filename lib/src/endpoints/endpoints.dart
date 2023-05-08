@@ -36,9 +36,11 @@ class Endpoints {
 
   static String registershare({
     required String id,
+     String? query,
   }) =>
       '/registershare'.withQueryParams({
         'id': id,
+        'q': query,
       });
 
   static String posts({
