@@ -10,11 +10,13 @@ class TenorClient {
   TenorClient({
     required String apiKey,
     required String countryCode,
+    required String clientKey,
   }) : _dio = TenorDio() {
     _dio.interceptors.add(
       RequestInterceptor(
         apiKey: apiKey,
         countryCode: countryCode,
+        clientKey: clientKey,
       ),
     );
   }
@@ -29,6 +31,26 @@ class TenorClient {
     final res = await _dio.get<Map<String, dynamic>>(
       Endpoints.search(
         query: query,
+        limit: limit,
+        next: next,
+      ),
+    );
+
+    final data = res.data;
+
+    if (data == null) {
+      throw Exception('No data found');
+    }
+
+    return TenorResponse.fromJson(data);
+  }
+
+  Future<TenorResponse> featuredGifs({
+    int limit = 20,
+    String? next,
+  }) async {
+    final res = await _dio.get<Map<String, dynamic>>(
+      Endpoints.featured(
         limit: limit,
         next: next,
       ),

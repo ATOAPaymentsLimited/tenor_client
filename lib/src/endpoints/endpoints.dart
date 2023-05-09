@@ -36,7 +36,7 @@ class Endpoints {
 
   static String registershare({
     required String id,
-     String? query,
+    String? query,
   }) =>
       '/registershare'.withQueryParams({
         'id': id,
@@ -50,6 +50,17 @@ class Endpoints {
       '/posts'.withQueryParams({
         'ids': ids,
         'media_filter': mediaFilters.map((e) => e.name).join(','),
+      });
+
+  static String featured({
+    int limit = 20,
+    List<MediaFilter> mediaFilters = MediaFilter.values,
+    String? next,
+  }) =>
+      '/featured'.withQueryParams({
+        'media_filter': mediaFilters.map((e) => e.name).join(','),
+        'limit': limit,
+        'pos': next,
       });
 }
 
