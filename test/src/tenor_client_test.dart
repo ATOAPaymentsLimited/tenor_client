@@ -5,7 +5,14 @@ import 'package:test/test.dart';
 void main() {
   group('TenorClient', () {
     test('can be instantiated', () {
-      expect(TenorClient(apiKey: '', countryCode: ''), isNotNull);
+      expect(
+        TenorClient(
+          apiKey: '',
+          countryCode: '',
+          clientKey: 'test_app',
+        ),
+        isNotNull,
+      );
     });
   });
 }

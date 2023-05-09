@@ -69,14 +69,10 @@ class _AutocompletePageState extends State<AutocompletePage> {
   }
 
   void _onShareGif(GifResult gif) async {
-    try {
-      await widget.tenorClient.registershare(
-        id: gif.id,
-        query: query,
-      );
-    } catch (e) {
-      print(e);
-    }
+    await widget.tenorClient.registershare(
+      id: gif.id,
+      query: query,
+    );
   }
 
   @override

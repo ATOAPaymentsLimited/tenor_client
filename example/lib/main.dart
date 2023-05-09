@@ -24,6 +24,7 @@ class _MyAppState extends State<MyApp> {
     _tenorClient = TenorClient(
       apiKey: 'AIzaSyAclShsTCNFHC8L892AIA0wdbot5TYgDYg',
       countryCode: 'GB',
+      clientKey: 'example_app',
     );
   }
 
