@@ -20,10 +20,8 @@ MediaFormats _$MediaFormatsFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$MediaFormats {
-  @JsonKey(fromJson: _fromJsonToString)
-  String get nanogif => throw _privateConstructorUsedError;
-  @JsonKey(fromJson: _fromJsonToString)
-  String get tinygif => throw _privateConstructorUsedError;
+  MediaFormat get nanogif => throw _privateConstructorUsedError;
+  MediaFormat get tinygif => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -37,9 +35,10 @@ abstract class $MediaFormatsCopyWith<$Res> {
           MediaFormats value, $Res Function(MediaFormats) then) =
       _$MediaFormatsCopyWithImpl<$Res, MediaFormats>;
   @useResult
-  $Res call(
-      {@JsonKey(fromJson: _fromJsonToString) String nanogif,
-      @JsonKey(fromJson: _fromJsonToString) String tinygif});
+  $Res call({MediaFormat nanogif, MediaFormat tinygif});
+
+  $MediaFormatCopyWith<$Res> get nanogif;
+  $MediaFormatCopyWith<$Res> get tinygif;
 }
 
 /// @nodoc
@@ -62,12 +61,28 @@ class _$MediaFormatsCopyWithImpl<$Res, $Val extends MediaFormats>
       nanogif: null == nanogif
           ? _value.nanogif
           : nanogif // ignore: cast_nullable_to_non_nullable
-              as String,
+              as MediaFormat,
       tinygif: null == tinygif
           ? _value.tinygif
           : tinygif // ignore: cast_nullable_to_non_nullable
-              as String,
+              as MediaFormat,
     ) as $Val);
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $MediaFormatCopyWith<$Res> get nanogif {
+    return $MediaFormatCopyWith<$Res>(_value.nanogif, (value) {
+      return _then(_value.copyWith(nanogif: value) as $Val);
+    });
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $MediaFormatCopyWith<$Res> get tinygif {
+    return $MediaFormatCopyWith<$Res>(_value.tinygif, (value) {
+      return _then(_value.copyWith(tinygif: value) as $Val);
+    });
   }
 }
 
@@ -79,9 +94,12 @@ abstract class _$$_MediaFormatsCopyWith<$Res>
       __$$_MediaFormatsCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call(
-      {@JsonKey(fromJson: _fromJsonToString) String nanogif,
-      @JsonKey(fromJson: _fromJsonToString) String tinygif});
+  $Res call({MediaFormat nanogif, MediaFormat tinygif});
+
+  @override
+  $MediaFormatCopyWith<$Res> get nanogif;
+  @override
+  $MediaFormatCopyWith<$Res> get tinygif;
 }
 
 /// @nodoc
@@ -102,11 +120,11 @@ class __$$_MediaFormatsCopyWithImpl<$Res>
       nanogif: null == nanogif
           ? _value.nanogif
           : nanogif // ignore: cast_nullable_to_non_nullable
-              as String,
+              as MediaFormat,
       tinygif: null == tinygif
           ? _value.tinygif
           : tinygif // ignore: cast_nullable_to_non_nullable
-              as String,
+              as MediaFormat,
     ));
   }
 }
@@ -114,20 +132,16 @@ class __$$_MediaFormatsCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_MediaFormats extends _MediaFormats {
-  const _$_MediaFormats(
-      {@JsonKey(fromJson: _fromJsonToString) required this.nanogif,
-      @JsonKey(fromJson: _fromJsonToString) required this.tinygif})
+  const _$_MediaFormats({required this.nanogif, required this.tinygif})
       : super._();
 
   factory _$_MediaFormats.fromJson(Map<String, dynamic> json) =>
       _$$_MediaFormatsFromJson(json);
 
   @override
-  @JsonKey(fromJson: _fromJsonToString)
-  final String nanogif;
+  final MediaFormat nanogif;
   @override
-  @JsonKey(fromJson: _fromJsonToString)
-  final String tinygif;
+  final MediaFormat tinygif;
 
   @override
   String toString() {
@@ -163,21 +177,17 @@ class _$_MediaFormats extends _MediaFormats {
 
 abstract class _MediaFormats extends MediaFormats {
   const factory _MediaFormats(
-      {@JsonKey(fromJson: _fromJsonToString)
-          required final String nanogif,
-      @JsonKey(fromJson: _fromJsonToString)
-          required final String tinygif}) = _$_MediaFormats;
+      {required final MediaFormat nanogif,
+      required final MediaFormat tinygif}) = _$_MediaFormats;
   const _MediaFormats._() : super._();
 
   factory _MediaFormats.fromJson(Map<String, dynamic> json) =
       _$_MediaFormats.fromJson;
 
   @override
-  @JsonKey(fromJson: _fromJsonToString)
-  String get nanogif;
+  MediaFormat get nanogif;
   @override
-  @JsonKey(fromJson: _fromJsonToString)
-  String get tinygif;
+  MediaFormat get tinygif;
   @override
   @JsonKey(ignore: true)
   _$$_MediaFormatsCopyWith<_$_MediaFormats> get copyWith =>

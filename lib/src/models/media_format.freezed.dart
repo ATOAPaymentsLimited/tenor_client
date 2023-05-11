@@ -21,6 +21,7 @@ MediaFormat _$MediaFormatFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$MediaFormat {
   String get url => throw _privateConstructorUsedError;
+  List<num> get dims => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -34,7 +35,7 @@ abstract class $MediaFormatCopyWith<$Res> {
           MediaFormat value, $Res Function(MediaFormat) then) =
       _$MediaFormatCopyWithImpl<$Res, MediaFormat>;
   @useResult
-  $Res call({String url});
+  $Res call({String url, List<num> dims});
 }
 
 /// @nodoc
@@ -51,12 +52,17 @@ class _$MediaFormatCopyWithImpl<$Res, $Val extends MediaFormat>
   @override
   $Res call({
     Object? url = null,
+    Object? dims = null,
   }) {
     return _then(_value.copyWith(
       url: null == url
           ? _value.url
           : url // ignore: cast_nullable_to_non_nullable
               as String,
+      dims: null == dims
+          ? _value.dims
+          : dims // ignore: cast_nullable_to_non_nullable
+              as List<num>,
     ) as $Val);
   }
 }
@@ -69,7 +75,7 @@ abstract class _$$_MediaFormatCopyWith<$Res>
       __$$_MediaFormatCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String url});
+  $Res call({String url, List<num> dims});
 }
 
 /// @nodoc
@@ -84,12 +90,17 @@ class __$$_MediaFormatCopyWithImpl<$Res>
   @override
   $Res call({
     Object? url = null,
+    Object? dims = null,
   }) {
     return _then(_$_MediaFormat(
       url: null == url
           ? _value.url
           : url // ignore: cast_nullable_to_non_nullable
               as String,
+      dims: null == dims
+          ? _value._dims
+          : dims // ignore: cast_nullable_to_non_nullable
+              as List<num>,
     ));
   }
 }
@@ -97,17 +108,26 @@ class __$$_MediaFormatCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_MediaFormat extends _MediaFormat {
-  const _$_MediaFormat({required this.url}) : super._();
+  const _$_MediaFormat({required this.url, required final List<num> dims})
+      : _dims = dims,
+        super._();
 
   factory _$_MediaFormat.fromJson(Map<String, dynamic> json) =>
       _$$_MediaFormatFromJson(json);
 
   @override
   final String url;
+  final List<num> _dims;
+  @override
+  List<num> get dims {
+    if (_dims is EqualUnmodifiableListView) return _dims;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_dims);
+  }
 
   @override
   String toString() {
-    return 'MediaFormat(url: $url)';
+    return 'MediaFormat(url: $url, dims: $dims)';
   }
 
   @override
@@ -115,12 +135,14 @@ class _$_MediaFormat extends _MediaFormat {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_MediaFormat &&
-            (identical(other.url, url) || other.url == url));
+            (identical(other.url, url) || other.url == url) &&
+            const DeepCollectionEquality().equals(other._dims, _dims));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, url);
+  int get hashCode =>
+      Object.hash(runtimeType, url, const DeepCollectionEquality().hash(_dims));
 
   @JsonKey(ignore: true)
   @override
@@ -137,7 +159,9 @@ class _$_MediaFormat extends _MediaFormat {
 }
 
 abstract class _MediaFormat extends MediaFormat {
-  const factory _MediaFormat({required final String url}) = _$_MediaFormat;
+  const factory _MediaFormat(
+      {required final String url,
+      required final List<num> dims}) = _$_MediaFormat;
   const _MediaFormat._() : super._();
 
   factory _MediaFormat.fromJson(Map<String, dynamic> json) =
@@ -145,6 +169,8 @@ abstract class _MediaFormat extends MediaFormat {
 
   @override
   String get url;
+  @override
+  List<num> get dims;
   @override
   @JsonKey(ignore: true)
   _$$_MediaFormatCopyWith<_$_MediaFormat> get copyWith =>

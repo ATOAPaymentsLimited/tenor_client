@@ -1,6 +1,6 @@
 name: tenor_client
 description: Tenor client for GIFs
-version: 0.1.0+1
+version: 0.1.1+2
 
 
 environment:

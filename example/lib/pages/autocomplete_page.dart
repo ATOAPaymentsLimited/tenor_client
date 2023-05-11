@@ -138,7 +138,7 @@ class _AutocompletePageState extends State<AutocompletePage> {
                           child: InkWell(
                             onTap: () => _onShareGif(gif),
                             child: Image.network(
-                              nanogif,
+                              nanogif.url,
                               fit: BoxFit.cover,
                             ),
                           ),
@@ -147,7 +147,7 @@ class _AutocompletePageState extends State<AutocompletePage> {
                           child: InkWell(
                             onTap: () => _onShareGif(gif),
                             child: Image.network(
-                              tinygif,
+                              tinygif.url,
                               fit: BoxFit.cover,
                             ),
                           ),

@@ -55,13 +55,13 @@ class _InfiniteGifListState extends State<InfiniteGifList> {
             children: [
               Expanded(
                 child: Image.network(
-                  nanogif,
+                  nanogif.url,
                   fit: BoxFit.cover,
                 ),
               ),
               Expanded(
                 child: Image.network(
-                  tinygif,
+                  tinygif.url,
                   fit: BoxFit.cover,
                 ),
               ),
