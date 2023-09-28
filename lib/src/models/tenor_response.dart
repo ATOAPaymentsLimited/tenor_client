@@ -4,7 +4,7 @@ import 'package:tenor_client/src/models/models.dart';
 part 'tenor_response.freezed.dart';
 part 'tenor_response.g.dart';
 
-@freezed
+@Freezed(toJson: false)
 class TenorResponse with _$TenorResponse {
   const factory TenorResponse({
     required List<GifResult> results,

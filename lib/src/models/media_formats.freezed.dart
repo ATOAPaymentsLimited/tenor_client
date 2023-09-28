@@ -23,7 +23,6 @@ mixin _$MediaFormats {
   MediaFormat get nanogif => throw _privateConstructorUsedError;
   MediaFormat get tinygif => throw _privateConstructorUsedError;
 
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $MediaFormatsCopyWith<MediaFormats> get copyWith =>
       throw _privateConstructorUsedError;
@@ -87,11 +86,11 @@ class _$MediaFormatsCopyWithImpl<$Res, $Val extends MediaFormats>
 }
 
 /// @nodoc
-abstract class _$$_MediaFormatsCopyWith<$Res>
+abstract class _$$MediaFormatsImplCopyWith<$Res>
     implements $MediaFormatsCopyWith<$Res> {
-  factory _$$_MediaFormatsCopyWith(
-          _$_MediaFormats value, $Res Function(_$_MediaFormats) then) =
-      __$$_MediaFormatsCopyWithImpl<$Res>;
+  factory _$$MediaFormatsImplCopyWith(
+          _$MediaFormatsImpl value, $Res Function(_$MediaFormatsImpl) then) =
+      __$$MediaFormatsImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({MediaFormat nanogif, MediaFormat tinygif});
@@ -103,11 +102,11 @@ abstract class _$$_MediaFormatsCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_MediaFormatsCopyWithImpl<$Res>
-    extends _$MediaFormatsCopyWithImpl<$Res, _$_MediaFormats>
-    implements _$$_MediaFormatsCopyWith<$Res> {
-  __$$_MediaFormatsCopyWithImpl(
-      _$_MediaFormats _value, $Res Function(_$_MediaFormats) _then)
+class __$$MediaFormatsImplCopyWithImpl<$Res>
+    extends _$MediaFormatsCopyWithImpl<$Res, _$MediaFormatsImpl>
+    implements _$$MediaFormatsImplCopyWith<$Res> {
+  __$$MediaFormatsImplCopyWithImpl(
+      _$MediaFormatsImpl _value, $Res Function(_$MediaFormatsImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -116,7 +115,7 @@ class __$$_MediaFormatsCopyWithImpl<$Res>
     Object? nanogif = null,
     Object? tinygif = null,
   }) {
-    return _then(_$_MediaFormats(
+    return _then(_$MediaFormatsImpl(
       nanogif: null == nanogif
           ? _value.nanogif
           : nanogif // ignore: cast_nullable_to_non_nullable
@@ -130,13 +129,13 @@ class __$$_MediaFormatsCopyWithImpl<$Res>
 }
 
 /// @nodoc
-@JsonSerializable()
-class _$_MediaFormats extends _MediaFormats {
-  const _$_MediaFormats({required this.nanogif, required this.tinygif})
+@JsonSerializable(createToJson: false)
+class _$MediaFormatsImpl extends _MediaFormats {
+  const _$MediaFormatsImpl({required this.nanogif, required this.tinygif})
       : super._();
 
-  factory _$_MediaFormats.fromJson(Map<String, dynamic> json) =>
-      _$$_MediaFormatsFromJson(json);
+  factory _$MediaFormatsImpl.fromJson(Map<String, dynamic> json) =>
+      _$$MediaFormatsImplFromJson(json);
 
   @override
   final MediaFormat nanogif;
@@ -152,7 +151,7 @@ class _$_MediaFormats extends _MediaFormats {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_MediaFormats &&
+            other is _$MediaFormatsImpl &&
             (identical(other.nanogif, nanogif) || other.nanogif == nanogif) &&
             (identical(other.tinygif, tinygif) || other.tinygif == tinygif));
   }
@@ -164,25 +163,18 @@ class _$_MediaFormats extends _MediaFormats {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_MediaFormatsCopyWith<_$_MediaFormats> get copyWith =>
-      __$$_MediaFormatsCopyWithImpl<_$_MediaFormats>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$_MediaFormatsToJson(
-      this,
-    );
-  }
+  _$$MediaFormatsImplCopyWith<_$MediaFormatsImpl> get copyWith =>
+      __$$MediaFormatsImplCopyWithImpl<_$MediaFormatsImpl>(this, _$identity);
 }
 
 abstract class _MediaFormats extends MediaFormats {
   const factory _MediaFormats(
       {required final MediaFormat nanogif,
-      required final MediaFormat tinygif}) = _$_MediaFormats;
+      required final MediaFormat tinygif}) = _$MediaFormatsImpl;
   const _MediaFormats._() : super._();
 
   factory _MediaFormats.fromJson(Map<String, dynamic> json) =
-      _$_MediaFormats.fromJson;
+      _$MediaFormatsImpl.fromJson;
 
   @override
   MediaFormat get nanogif;
@@ -190,6 +182,6 @@ abstract class _MediaFormats extends MediaFormats {
   MediaFormat get tinygif;
   @override
   @JsonKey(ignore: true)
-  _$$_MediaFormatsCopyWith<_$_MediaFormats> get copyWith =>
+  _$$MediaFormatsImplCopyWith<_$MediaFormatsImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

@@ -6,7 +6,7 @@ import 'package:tenor_client/src/models/models.dart';
 part 'gif_result.freezed.dart';
 part 'gif_result.g.dart';
 
-@freezed
+@Freezed(toJson: false)
 class GifResult with _$GifResult {
   const factory GifResult({
     required String id,
