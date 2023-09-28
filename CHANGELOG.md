@@ -9,3 +9,7 @@
 # 0.1.3
 
 - chore: docs
+
+# 0.1.4
+
+- chore: re-generate generated files

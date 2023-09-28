@@ -1,6 +1,6 @@
 name: tenor_client
 description: Tenor client for GIFs
-version: 0.1.3
+version: 0.1.4
 homepage: https://github.com/ATOAPaymentsLimited/tenor_client
 repository: https://github.com/ATOAPaymentsLimited/tenor_client
 
