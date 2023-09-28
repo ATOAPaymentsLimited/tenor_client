@@ -102,22 +102,22 @@ class _$MediaFilterCopyWithImpl<$Res, $Val extends MediaFilter>
 }
 
 /// @nodoc
-abstract class _$$_MediaFilterNanoGifCopyWith<$Res>
+abstract class _$$MediaFilterNanoGifImplCopyWith<$Res>
     implements $MediaFilterCopyWith<$Res> {
-  factory _$$_MediaFilterNanoGifCopyWith(_$_MediaFilterNanoGif value,
-          $Res Function(_$_MediaFilterNanoGif) then) =
-      __$$_MediaFilterNanoGifCopyWithImpl<$Res>;
+  factory _$$MediaFilterNanoGifImplCopyWith(_$MediaFilterNanoGifImpl value,
+          $Res Function(_$MediaFilterNanoGifImpl) then) =
+      __$$MediaFilterNanoGifImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String name});
 }
 
 /// @nodoc
-class __$$_MediaFilterNanoGifCopyWithImpl<$Res>
-    extends _$MediaFilterCopyWithImpl<$Res, _$_MediaFilterNanoGif>
-    implements _$$_MediaFilterNanoGifCopyWith<$Res> {
-  __$$_MediaFilterNanoGifCopyWithImpl(
-      _$_MediaFilterNanoGif _value, $Res Function(_$_MediaFilterNanoGif) _then)
+class __$$MediaFilterNanoGifImplCopyWithImpl<$Res>
+    extends _$MediaFilterCopyWithImpl<$Res, _$MediaFilterNanoGifImpl>
+    implements _$$MediaFilterNanoGifImplCopyWith<$Res> {
+  __$$MediaFilterNanoGifImplCopyWithImpl(_$MediaFilterNanoGifImpl _value,
+      $Res Function(_$MediaFilterNanoGifImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -125,7 +125,7 @@ class __$$_MediaFilterNanoGifCopyWithImpl<$Res>
   $Res call({
     Object? name = null,
   }) {
-    return _then(_$_MediaFilterNanoGif(
+    return _then(_$MediaFilterNanoGifImpl(
       name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -136,8 +136,8 @@ class __$$_MediaFilterNanoGifCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_MediaFilterNanoGif extends _MediaFilterNanoGif {
-  const _$_MediaFilterNanoGif({this.name = 'nanogif'}) : super._();
+class _$MediaFilterNanoGifImpl extends _MediaFilterNanoGif {
+  const _$MediaFilterNanoGifImpl({this.name = 'nanogif'}) : super._();
 
   @override
   @JsonKey()
@@ -152,7 +152,7 @@ class _$_MediaFilterNanoGif extends _MediaFilterNanoGif {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_MediaFilterNanoGif &&
+            other is _$MediaFilterNanoGifImpl &&
             (identical(other.name, name) || other.name == name));
   }
 
@@ -162,8 +162,8 @@ class _$_MediaFilterNanoGif extends _MediaFilterNanoGif {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_MediaFilterNanoGifCopyWith<_$_MediaFilterNanoGif> get copyWith =>
-      __$$_MediaFilterNanoGifCopyWithImpl<_$_MediaFilterNanoGif>(
+  _$$MediaFilterNanoGifImplCopyWith<_$MediaFilterNanoGifImpl> get copyWith =>
+      __$$MediaFilterNanoGifImplCopyWithImpl<_$MediaFilterNanoGifImpl>(
           this, _$identity);
 
   @override
@@ -238,34 +238,34 @@ class _$_MediaFilterNanoGif extends _MediaFilterNanoGif {
 
 abstract class _MediaFilterNanoGif extends MediaFilter {
   const factory _MediaFilterNanoGif({final String name}) =
-      _$_MediaFilterNanoGif;
+      _$MediaFilterNanoGifImpl;
   const _MediaFilterNanoGif._() : super._();
 
   @override
   String get name;
   @override
   @JsonKey(ignore: true)
-  _$$_MediaFilterNanoGifCopyWith<_$_MediaFilterNanoGif> get copyWith =>
+  _$$MediaFilterNanoGifImplCopyWith<_$MediaFilterNanoGifImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$_MediaFilterTinygifCopyWith<$Res>
+abstract class _$$MediaFilterTinygifImplCopyWith<$Res>
     implements $MediaFilterCopyWith<$Res> {
-  factory _$$_MediaFilterTinygifCopyWith(_$_MediaFilterTinygif value,
-          $Res Function(_$_MediaFilterTinygif) then) =
-      __$$_MediaFilterTinygifCopyWithImpl<$Res>;
+  factory _$$MediaFilterTinygifImplCopyWith(_$MediaFilterTinygifImpl value,
+          $Res Function(_$MediaFilterTinygifImpl) then) =
+      __$$MediaFilterTinygifImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String name});
 }
 
 /// @nodoc
-class __$$_MediaFilterTinygifCopyWithImpl<$Res>
-    extends _$MediaFilterCopyWithImpl<$Res, _$_MediaFilterTinygif>
-    implements _$$_MediaFilterTinygifCopyWith<$Res> {
-  __$$_MediaFilterTinygifCopyWithImpl(
-      _$_MediaFilterTinygif _value, $Res Function(_$_MediaFilterTinygif) _then)
+class __$$MediaFilterTinygifImplCopyWithImpl<$Res>
+    extends _$MediaFilterCopyWithImpl<$Res, _$MediaFilterTinygifImpl>
+    implements _$$MediaFilterTinygifImplCopyWith<$Res> {
+  __$$MediaFilterTinygifImplCopyWithImpl(_$MediaFilterTinygifImpl _value,
+      $Res Function(_$MediaFilterTinygifImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -273,7 +273,7 @@ class __$$_MediaFilterTinygifCopyWithImpl<$Res>
   $Res call({
     Object? name = null,
   }) {
-    return _then(_$_MediaFilterTinygif(
+    return _then(_$MediaFilterTinygifImpl(
       name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -284,8 +284,8 @@ class __$$_MediaFilterTinygifCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_MediaFilterTinygif extends _MediaFilterTinygif {
-  const _$_MediaFilterTinygif({this.name = 'tinygif'}) : super._();
+class _$MediaFilterTinygifImpl extends _MediaFilterTinygif {
+  const _$MediaFilterTinygifImpl({this.name = 'tinygif'}) : super._();
 
   @override
   @JsonKey()
@@ -300,7 +300,7 @@ class _$_MediaFilterTinygif extends _MediaFilterTinygif {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_MediaFilterTinygif &&
+            other is _$MediaFilterTinygifImpl &&
             (identical(other.name, name) || other.name == name));
   }
 
@@ -310,8 +310,8 @@ class _$_MediaFilterTinygif extends _MediaFilterTinygif {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_MediaFilterTinygifCopyWith<_$_MediaFilterTinygif> get copyWith =>
-      __$$_MediaFilterTinygifCopyWithImpl<_$_MediaFilterTinygif>(
+  _$$MediaFilterTinygifImplCopyWith<_$MediaFilterTinygifImpl> get copyWith =>
+      __$$MediaFilterTinygifImplCopyWithImpl<_$MediaFilterTinygifImpl>(
           this, _$identity);
 
   @override
@@ -386,36 +386,36 @@ class _$_MediaFilterTinygif extends _MediaFilterTinygif {
 
 abstract class _MediaFilterTinygif extends MediaFilter {
   const factory _MediaFilterTinygif({final String name}) =
-      _$_MediaFilterTinygif;
+      _$MediaFilterTinygifImpl;
   const _MediaFilterTinygif._() : super._();
 
   @override
   String get name;
   @override
   @JsonKey(ignore: true)
-  _$$_MediaFilterTinygifCopyWith<_$_MediaFilterTinygif> get copyWith =>
+  _$$MediaFilterTinygifImplCopyWith<_$MediaFilterTinygifImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$_MediaFilterNanogifTransparentCopyWith<$Res>
+abstract class _$$MediaFilterNanogifTransparentImplCopyWith<$Res>
     implements $MediaFilterCopyWith<$Res> {
-  factory _$$_MediaFilterNanogifTransparentCopyWith(
-          _$_MediaFilterNanogifTransparent value,
-          $Res Function(_$_MediaFilterNanogifTransparent) then) =
-      __$$_MediaFilterNanogifTransparentCopyWithImpl<$Res>;
+  factory _$$MediaFilterNanogifTransparentImplCopyWith(
+          _$MediaFilterNanogifTransparentImpl value,
+          $Res Function(_$MediaFilterNanogifTransparentImpl) then) =
+      __$$MediaFilterNanogifTransparentImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String name});
 }
 
 /// @nodoc
-class __$$_MediaFilterNanogifTransparentCopyWithImpl<$Res>
-    extends _$MediaFilterCopyWithImpl<$Res, _$_MediaFilterNanogifTransparent>
-    implements _$$_MediaFilterNanogifTransparentCopyWith<$Res> {
-  __$$_MediaFilterNanogifTransparentCopyWithImpl(
-      _$_MediaFilterNanogifTransparent _value,
-      $Res Function(_$_MediaFilterNanogifTransparent) _then)
+class __$$MediaFilterNanogifTransparentImplCopyWithImpl<$Res>
+    extends _$MediaFilterCopyWithImpl<$Res, _$MediaFilterNanogifTransparentImpl>
+    implements _$$MediaFilterNanogifTransparentImplCopyWith<$Res> {
+  __$$MediaFilterNanogifTransparentImplCopyWithImpl(
+      _$MediaFilterNanogifTransparentImpl _value,
+      $Res Function(_$MediaFilterNanogifTransparentImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -423,7 +423,7 @@ class __$$_MediaFilterNanogifTransparentCopyWithImpl<$Res>
   $Res call({
     Object? name = null,
   }) {
-    return _then(_$_MediaFilterNanogifTransparent(
+    return _then(_$MediaFilterNanogifTransparentImpl(
       name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -434,8 +434,9 @@ class __$$_MediaFilterNanogifTransparentCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_MediaFilterNanogifTransparent extends _MediaFilterNanogifTransparent {
-  const _$_MediaFilterNanogifTransparent({this.name = 'nanogif_transparent'})
+class _$MediaFilterNanogifTransparentImpl
+    extends _MediaFilterNanogifTransparent {
+  const _$MediaFilterNanogifTransparentImpl({this.name = 'nanogif_transparent'})
       : super._();
 
   @override
@@ -451,7 +452,7 @@ class _$_MediaFilterNanogifTransparent extends _MediaFilterNanogifTransparent {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_MediaFilterNanogifTransparent &&
+            other is _$MediaFilterNanogifTransparentImpl &&
             (identical(other.name, name) || other.name == name));
   }
 
@@ -461,9 +462,10 @@ class _$_MediaFilterNanogifTransparent extends _MediaFilterNanogifTransparent {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_MediaFilterNanogifTransparentCopyWith<_$_MediaFilterNanogifTransparent>
-      get copyWith => __$$_MediaFilterNanogifTransparentCopyWithImpl<
-          _$_MediaFilterNanogifTransparent>(this, _$identity);
+  _$$MediaFilterNanogifTransparentImplCopyWith<
+          _$MediaFilterNanogifTransparentImpl>
+      get copyWith => __$$MediaFilterNanogifTransparentImplCopyWithImpl<
+          _$MediaFilterNanogifTransparentImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -537,13 +539,14 @@ class _$_MediaFilterNanogifTransparent extends _MediaFilterNanogifTransparent {
 
 abstract class _MediaFilterNanogifTransparent extends MediaFilter {
   const factory _MediaFilterNanogifTransparent({final String name}) =
-      _$_MediaFilterNanogifTransparent;
+      _$MediaFilterNanogifTransparentImpl;
   const _MediaFilterNanogifTransparent._() : super._();
 
   @override
   String get name;
   @override
   @JsonKey(ignore: true)
-  _$$_MediaFilterNanogifTransparentCopyWith<_$_MediaFilterNanogifTransparent>
+  _$$MediaFilterNanogifTransparentImplCopyWith<
+          _$MediaFilterNanogifTransparentImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

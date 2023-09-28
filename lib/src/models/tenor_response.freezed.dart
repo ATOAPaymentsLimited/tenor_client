@@ -23,7 +23,6 @@ mixin _$TenorResponse {
   List<GifResult> get results => throw _privateConstructorUsedError;
   String get next => throw _privateConstructorUsedError;
 
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $TenorResponseCopyWith<TenorResponse> get copyWith =>
       throw _privateConstructorUsedError;
@@ -68,22 +67,22 @@ class _$TenorResponseCopyWithImpl<$Res, $Val extends TenorResponse>
 }
 
 /// @nodoc
-abstract class _$$_ResponseCopyWith<$Res>
+abstract class _$$ResponseImplCopyWith<$Res>
     implements $TenorResponseCopyWith<$Res> {
-  factory _$$_ResponseCopyWith(
-          _$_Response value, $Res Function(_$_Response) then) =
-      __$$_ResponseCopyWithImpl<$Res>;
+  factory _$$ResponseImplCopyWith(
+          _$ResponseImpl value, $Res Function(_$ResponseImpl) then) =
+      __$$ResponseImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({List<GifResult> results, String next});
 }
 
 /// @nodoc
-class __$$_ResponseCopyWithImpl<$Res>
-    extends _$TenorResponseCopyWithImpl<$Res, _$_Response>
-    implements _$$_ResponseCopyWith<$Res> {
-  __$$_ResponseCopyWithImpl(
-      _$_Response _value, $Res Function(_$_Response) _then)
+class __$$ResponseImplCopyWithImpl<$Res>
+    extends _$TenorResponseCopyWithImpl<$Res, _$ResponseImpl>
+    implements _$$ResponseImplCopyWith<$Res> {
+  __$$ResponseImplCopyWithImpl(
+      _$ResponseImpl _value, $Res Function(_$ResponseImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -92,7 +91,7 @@ class __$$_ResponseCopyWithImpl<$Res>
     Object? results = null,
     Object? next = null,
   }) {
-    return _then(_$_Response(
+    return _then(_$ResponseImpl(
       results: null == results
           ? _value._results
           : results // ignore: cast_nullable_to_non_nullable
@@ -106,15 +105,15 @@ class __$$_ResponseCopyWithImpl<$Res>
 }
 
 /// @nodoc
-@JsonSerializable()
-class _$_Response extends _Response {
-  const _$_Response(
+@JsonSerializable(createToJson: false)
+class _$ResponseImpl extends _Response {
+  const _$ResponseImpl(
       {required final List<GifResult> results, required this.next})
       : _results = results,
         super._();
 
-  factory _$_Response.fromJson(Map<String, dynamic> json) =>
-      _$$_ResponseFromJson(json);
+  factory _$ResponseImpl.fromJson(Map<String, dynamic> json) =>
+      _$$ResponseImplFromJson(json);
 
   final List<GifResult> _results;
   @override
@@ -136,7 +135,7 @@ class _$_Response extends _Response {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Response &&
+            other is _$ResponseImpl &&
             const DeepCollectionEquality().equals(other._results, _results) &&
             (identical(other.next, next) || other.next == next));
   }
@@ -149,24 +148,18 @@ class _$_Response extends _Response {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_ResponseCopyWith<_$_Response> get copyWith =>
-      __$$_ResponseCopyWithImpl<_$_Response>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$_ResponseToJson(
-      this,
-    );
-  }
+  _$$ResponseImplCopyWith<_$ResponseImpl> get copyWith =>
+      __$$ResponseImplCopyWithImpl<_$ResponseImpl>(this, _$identity);
 }
 
 abstract class _Response extends TenorResponse {
   const factory _Response(
       {required final List<GifResult> results,
-      required final String next}) = _$_Response;
+      required final String next}) = _$ResponseImpl;
   const _Response._() : super._();
 
-  factory _Response.fromJson(Map<String, dynamic> json) = _$_Response.fromJson;
+  factory _Response.fromJson(Map<String, dynamic> json) =
+      _$ResponseImpl.fromJson;
 
   @override
   List<GifResult> get results;
@@ -174,6 +167,6 @@ abstract class _Response extends TenorResponse {
   String get next;
   @override
   @JsonKey(ignore: true)
-  _$$_ResponseCopyWith<_$_Response> get copyWith =>
+  _$$ResponseImplCopyWith<_$ResponseImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

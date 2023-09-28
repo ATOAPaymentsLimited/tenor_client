@@ -25,7 +25,6 @@ mixin _$GifResult {
   @JsonKey(name: 'media_formats')
   MediaFormats get mediaFormats => throw _privateConstructorUsedError;
 
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $GifResultCopyWith<GifResult> get copyWith =>
       throw _privateConstructorUsedError;
@@ -87,10 +86,11 @@ class _$GifResultCopyWithImpl<$Res, $Val extends GifResult>
 }
 
 /// @nodoc
-abstract class _$$_GifResultCopyWith<$Res> implements $GifResultCopyWith<$Res> {
-  factory _$$_GifResultCopyWith(
-          _$_GifResult value, $Res Function(_$_GifResult) then) =
-      __$$_GifResultCopyWithImpl<$Res>;
+abstract class _$$GifResultImplCopyWith<$Res>
+    implements $GifResultCopyWith<$Res> {
+  factory _$$GifResultImplCopyWith(
+          _$GifResultImpl value, $Res Function(_$GifResultImpl) then) =
+      __$$GifResultImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -103,11 +103,11 @@ abstract class _$$_GifResultCopyWith<$Res> implements $GifResultCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_GifResultCopyWithImpl<$Res>
-    extends _$GifResultCopyWithImpl<$Res, _$_GifResult>
-    implements _$$_GifResultCopyWith<$Res> {
-  __$$_GifResultCopyWithImpl(
-      _$_GifResult _value, $Res Function(_$_GifResult) _then)
+class __$$GifResultImplCopyWithImpl<$Res>
+    extends _$GifResultCopyWithImpl<$Res, _$GifResultImpl>
+    implements _$$GifResultImplCopyWith<$Res> {
+  __$$GifResultImplCopyWithImpl(
+      _$GifResultImpl _value, $Res Function(_$GifResultImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -117,7 +117,7 @@ class __$$_GifResultCopyWithImpl<$Res>
     Object? itemurl = null,
     Object? mediaFormats = null,
   }) {
-    return _then(_$_GifResult(
+    return _then(_$GifResultImpl(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -135,16 +135,16 @@ class __$$_GifResultCopyWithImpl<$Res>
 }
 
 /// @nodoc
-@JsonSerializable()
-class _$_GifResult extends _GifResult {
-  const _$_GifResult(
+@JsonSerializable(createToJson: false)
+class _$GifResultImpl extends _GifResult {
+  const _$GifResultImpl(
       {required this.id,
       required this.itemurl,
       @JsonKey(name: 'media_formats') required this.mediaFormats})
       : super._();
 
-  factory _$_GifResult.fromJson(Map<String, dynamic> json) =>
-      _$$_GifResultFromJson(json);
+  factory _$GifResultImpl.fromJson(Map<String, dynamic> json) =>
+      _$$GifResultImplFromJson(json);
 
   @override
   final String id;
@@ -163,7 +163,7 @@ class _$_GifResult extends _GifResult {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_GifResult &&
+            other is _$GifResultImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.itemurl, itemurl) || other.itemurl == itemurl) &&
             (identical(other.mediaFormats, mediaFormats) ||
@@ -177,15 +177,8 @@ class _$_GifResult extends _GifResult {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_GifResultCopyWith<_$_GifResult> get copyWith =>
-      __$$_GifResultCopyWithImpl<_$_GifResult>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$_GifResultToJson(
-      this,
-    );
-  }
+  _$$GifResultImplCopyWith<_$GifResultImpl> get copyWith =>
+      __$$GifResultImplCopyWithImpl<_$GifResultImpl>(this, _$identity);
 }
 
 abstract class _GifResult extends GifResult {
@@ -193,11 +186,11 @@ abstract class _GifResult extends GifResult {
       {required final String id,
       required final String itemurl,
       @JsonKey(name: 'media_formats')
-          required final MediaFormats mediaFormats}) = _$_GifResult;
+      required final MediaFormats mediaFormats}) = _$GifResultImpl;
   const _GifResult._() : super._();
 
   factory _GifResult.fromJson(Map<String, dynamic> json) =
-      _$_GifResult.fromJson;
+      _$GifResultImpl.fromJson;
 
   @override
   String get id;
@@ -208,6 +201,6 @@ abstract class _GifResult extends GifResult {
   MediaFormats get mediaFormats;
   @override
   @JsonKey(ignore: true)
-  _$$_GifResultCopyWith<_$_GifResult> get copyWith =>
+  _$$GifResultImplCopyWith<_$GifResultImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

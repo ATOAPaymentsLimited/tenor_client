@@ -6,16 +6,10 @@ part of 'gif_result.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_GifResult _$$_GifResultFromJson(Map<String, dynamic> json) => _$_GifResult(
+_$GifResultImpl _$$GifResultImplFromJson(Map<String, dynamic> json) =>
+    _$GifResultImpl(
       id: json['id'] as String,
       itemurl: json['itemurl'] as String,
       mediaFormats:
           MediaFormats.fromJson(json['media_formats'] as Map<String, dynamic>),
     );
-
-Map<String, dynamic> _$$_GifResultToJson(_$_GifResult instance) =>
-    <String, dynamic>{
-      'id': instance.id,
-      'itemurl': instance.itemurl,
-      'media_formats': instance.mediaFormats,
-    };

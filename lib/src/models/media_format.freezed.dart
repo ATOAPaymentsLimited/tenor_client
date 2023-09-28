@@ -23,7 +23,6 @@ mixin _$MediaFormat {
   String get url => throw _privateConstructorUsedError;
   List<num> get dims => throw _privateConstructorUsedError;
 
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $MediaFormatCopyWith<MediaFormat> get copyWith =>
       throw _privateConstructorUsedError;
@@ -68,22 +67,22 @@ class _$MediaFormatCopyWithImpl<$Res, $Val extends MediaFormat>
 }
 
 /// @nodoc
-abstract class _$$_MediaFormatCopyWith<$Res>
+abstract class _$$MediaFormatImplCopyWith<$Res>
     implements $MediaFormatCopyWith<$Res> {
-  factory _$$_MediaFormatCopyWith(
-          _$_MediaFormat value, $Res Function(_$_MediaFormat) then) =
-      __$$_MediaFormatCopyWithImpl<$Res>;
+  factory _$$MediaFormatImplCopyWith(
+          _$MediaFormatImpl value, $Res Function(_$MediaFormatImpl) then) =
+      __$$MediaFormatImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String url, List<num> dims});
 }
 
 /// @nodoc
-class __$$_MediaFormatCopyWithImpl<$Res>
-    extends _$MediaFormatCopyWithImpl<$Res, _$_MediaFormat>
-    implements _$$_MediaFormatCopyWith<$Res> {
-  __$$_MediaFormatCopyWithImpl(
-      _$_MediaFormat _value, $Res Function(_$_MediaFormat) _then)
+class __$$MediaFormatImplCopyWithImpl<$Res>
+    extends _$MediaFormatCopyWithImpl<$Res, _$MediaFormatImpl>
+    implements _$$MediaFormatImplCopyWith<$Res> {
+  __$$MediaFormatImplCopyWithImpl(
+      _$MediaFormatImpl _value, $Res Function(_$MediaFormatImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -92,7 +91,7 @@ class __$$_MediaFormatCopyWithImpl<$Res>
     Object? url = null,
     Object? dims = null,
   }) {
-    return _then(_$_MediaFormat(
+    return _then(_$MediaFormatImpl(
       url: null == url
           ? _value.url
           : url // ignore: cast_nullable_to_non_nullable
@@ -106,14 +105,14 @@ class __$$_MediaFormatCopyWithImpl<$Res>
 }
 
 /// @nodoc
-@JsonSerializable()
-class _$_MediaFormat extends _MediaFormat {
-  const _$_MediaFormat({required this.url, required final List<num> dims})
+@JsonSerializable(createToJson: false)
+class _$MediaFormatImpl extends _MediaFormat {
+  const _$MediaFormatImpl({required this.url, required final List<num> dims})
       : _dims = dims,
         super._();
 
-  factory _$_MediaFormat.fromJson(Map<String, dynamic> json) =>
-      _$$_MediaFormatFromJson(json);
+  factory _$MediaFormatImpl.fromJson(Map<String, dynamic> json) =>
+      _$$MediaFormatImplFromJson(json);
 
   @override
   final String url;
@@ -134,7 +133,7 @@ class _$_MediaFormat extends _MediaFormat {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_MediaFormat &&
+            other is _$MediaFormatImpl &&
             (identical(other.url, url) || other.url == url) &&
             const DeepCollectionEquality().equals(other._dims, _dims));
   }
@@ -147,25 +146,18 @@ class _$_MediaFormat extends _MediaFormat {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_MediaFormatCopyWith<_$_MediaFormat> get copyWith =>
-      __$$_MediaFormatCopyWithImpl<_$_MediaFormat>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$_MediaFormatToJson(
-      this,
-    );
-  }
+  _$$MediaFormatImplCopyWith<_$MediaFormatImpl> get copyWith =>
+      __$$MediaFormatImplCopyWithImpl<_$MediaFormatImpl>(this, _$identity);
 }
 
 abstract class _MediaFormat extends MediaFormat {
   const factory _MediaFormat(
       {required final String url,
-      required final List<num> dims}) = _$_MediaFormat;
+      required final List<num> dims}) = _$MediaFormatImpl;
   const _MediaFormat._() : super._();
 
   factory _MediaFormat.fromJson(Map<String, dynamic> json) =
-      _$_MediaFormat.fromJson;
+      _$MediaFormatImpl.fromJson;
 
   @override
   String get url;
@@ -173,6 +165,6 @@ abstract class _MediaFormat extends MediaFormat {
   List<num> get dims;
   @override
   @JsonKey(ignore: true)
-  _$$_MediaFormatCopyWith<_$_MediaFormat> get copyWith =>
+  _$$MediaFormatImplCopyWith<_$MediaFormatImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
