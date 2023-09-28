@@ -22,7 +22,7 @@ class _MyAppState extends State<MyApp> {
   void initState() {
     super.initState();
     _tenorClient = TenorClient(
-      apiKey: 'AIzaSyAclShsTCNFHC8L892AIA0wdbot5TYgDYg',
+      apiKey: '<INSERT-KEY-HERE>',
       countryCode: 'GB',
       clientKey: 'example_app',
     );
